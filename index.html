@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script src="
+https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/lib/index.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+" rel="stylesheet"> -->
+    <title>Student Form</title>
+
+    <style>
+        .name_error_msg,
+        .age_error_msg,
+        .email_error_msg,
+        .phone_error_msg,
+        .password_error_msg {
+            color: red;
+            font-size: small;
+            display: none;
+        }
+
+        #dlt {
+            background-color: red;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body style="display: flex;flex-direction:column;align-items: center;">
+    <section>
+        <form style="width: 100%;height:100%;padding: 5%;">
+            <h1 style="text-align: center;">Student Form</h1>
+            <table style="border: solid black 1px;">
+                <tr>
+                    <th>Name </th>
+                    <td><input type="text" id="name" placeholder="Enter name "></td>
+                    <td><span id="name_error" class="name_error_msg">Name must contain only letters !</span></td>
+                </tr>
+                <tr>
+                    <th>Age </th>
+                    <td><input type="number" id="age" placeholder="Enter age "></td>
+                    <td><span id="age_error" class="age_error_msg">Enter age </span></td>
+                </tr>
+                <tr>
+                    <th>Gender </th>
+                    <td><input type="radio" name="gender" value="Female">Female
+                        <input type="radio" name="gender" value="Male">Male
+                    </td>
+                    <td style="display: none;">
+                        <p class="hidden" id="gender_value"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Course </th>
+
+                    <td>
+                        <input type="checkbox" name="check" value="C"> C
+                        <input type="checkbox" name="check" value="Js"> Js
+                        <input type="checkbox" name="check" value="python"> Python
+                        <input type="checkbox" name="check" value="Java"> Java
+                    </td>
+                    <td style="display:none;">
+                        <h2 id="checked_values"></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <th>E-mail </th>
+                    <td><input type="email" name="email" id="email" placeholder="Enter gmail"></td>
+                    <td><span id="email_error" class="email_error_msg">Enter valid Gmail ! </span></td>
+                </tr>
+                <tr>
+                    <th>Phone No </th>
+                    <td><input type="text" name="phone" id="phone" placeholder="Enter phone no"></td>
+                    <td><span id="phone_error" class="phone_error_msg">Enter valid phone number! </span></td>
+                </tr>
+                <tr>
+                    <th>Password </th>
+                    <td><input type="password" name="password" id="pwd" placeholder="Enter password"></td>
+                    <td><span id="password_error" class="password_error_msg">Enter valid password! </span></td>
+                </tr>
+
+                <!-- <tr>
+                    <td rowspan="2"></td>
+                    <td id="pwdhint">Password must be 8 characters ! </td> -->
+
+                <!-- <div id="pwdhint"
+                        class="hidden z-0 bg-blue-200 p-3 font-light text-sm rounded-md absolute mt-5 ml-11"
+                        style="width: 25%;">
+                        <p class="text-right cursor-pointer" id="pwdhintclose">X</p> password must be enter 8 characters
+                        mixed of numbers,digits and letters
+                    </div>
+
+                </tr> -->
+                <tr>
+                    <td id="submit" colspan="2" style="text-align: center;margin:5px;"><button
+                            style="margin:5%;">Submit</button></td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+        </form>
+        <br>
+    </section>
+
+    <!-- section 2 - display students value in another table -->
+    <table id="section_2" style='border:solid black 1px;padding:1%;'>
+
+        <tr class="section_2_heading">
+            <th>Name </th>
+            <th>Age </th>
+            <th>Gender </th>
+            <th>Course </th>
+            <th>E-mail </th>
+            <th>Phone No </th>
+            <th>Password </th>
+        </tr>
+
+        <tr class="section_2_body">
+            <td id="name_container"></td>
+            <td id="age_container"></td>
+            <td id="gender_container"></td>
+            <td id="course_container"></td>
+            <td id="email_container"></td>
+            <td id="phone_container"></td>
+            <td id="password_container"></td>
+        </tr>
+    </table>
+
+</body>
+<script src="script.js"></script>
+
+</html>
